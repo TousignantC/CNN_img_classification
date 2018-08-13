@@ -6,5 +6,3 @@ im = resizeAndPad(img=im, size=(48, 48))
 cv2.imshow('image', im)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
-bnnn

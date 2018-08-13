@@ -8,5 +8,5 @@ output/
 test/
 train/
 *.pyc
-.idea
+.idea/
 .cache

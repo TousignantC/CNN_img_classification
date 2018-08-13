@@ -159,4 +159,3 @@ class DataSetGenerator:
 
 # if __name__ == "__main__":
 #     separateData("./train")
-sda

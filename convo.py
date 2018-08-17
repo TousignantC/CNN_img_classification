@@ -94,16 +94,12 @@ with tf.Session() as sess:
     saver.restore(sess, 'models/model.ckpt')
 
     # Use the model to get predicted y
-    result = sess.run(y_pred, feed_dict={x: Xphotos, hold_prob: 1.0})
-    result_list = list(result)
-
+    logits = sess.run(y_pred, feed_dict={x: Xphotos, hold_prob: 1.0})
+    preds = tf.argmax(logits, axis=1)
+    results = preds.eval()
 
 print("Creating .txt file with results...")
 text_file = open("output/Output.txt", "w")
 for i in range(len(image_name)):
-    text_file.write("{},{}\n".format(image_name[i], result_list[i].argmax()))
+    text_file.write("{},{}\n".format(image_name[i], results[i]))
 text_file.close()
-
-
-
-

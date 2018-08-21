@@ -36,8 +36,8 @@ for data in test_data:
 print("Importing data to predict...")
 # Import data to predict
 image_list, image_name = [], []
-photo_path = r"\\NAS-5318-B\Projets\CAIMAN\2017\batch1\*.jpg"
-#photo_path = "./photos/*.jpg"
+#photo_path = r"\\NAS-5318-B\Projets\CAIMAN\2017\batch1\*.jpg"
+photo_path = "./photos/*.jpg"
 for filename in glob.glob(photo_path):
     if os.path.getsize(filename) > 0:
         image_name.append(filename[len(photo_path)-5:])

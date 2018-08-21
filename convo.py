@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# ---------------------------------------------------------------------------
+# convo.py
+# Created on: 2018-08-13
+# Author : Charles Tousignant
+# Project : -
+# Description : Image classification using Convolutional Neuron Network
+# ---------------------------------------------------------------------------
 import glob
 from utils import *
 
@@ -28,7 +36,8 @@ for data in test_data:
 print("Importing data to predict...")
 # Import data to predict
 image_list, image_name = [], []
-photo_path = "./photos/*.jpg"
+photo_path = r"\\NAS-5318-B\Projets\CAIMAN\2017\batch1\*.jpg"
+#photo_path = "./photos/*.jpg"
 for filename in glob.glob(photo_path):
     if os.path.getsize(filename) > 0:
         image_name.append(filename[len(photo_path)-5:])
@@ -37,7 +46,6 @@ for filename in glob.glob(photo_path):
         im = im.reshape(1, height, width, 3)/255
         image_list.append(im)
 Xphotos = np.vstack(image_list)
-#Yphotos = np.zeros((len(Xphotos), classes))
 
 
 print("Creating model...")

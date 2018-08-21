@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# ---------------------------------------------------------------------------
+# utils.py
+# Created on: 2018-08-13
+# Author : Charles Tousignant
+# Project : -
+# Description : Utility functions
+# ---------------------------------------------------------------------------
 import os
 import pickle
 from os import listdir
@@ -9,6 +17,9 @@ import numpy as np
 import tensorflow as tf
 
 
+#######################################
+# Helper funtions for data management #
+#######################################
 def separateData(data_dir):
     for filename in listdir(data_dir):
         if isfile(join(data_dir, filename)):
@@ -121,7 +132,9 @@ class DataSetGenerator:
                 labels = []
 
 
-# Helper Functions
+############################
+# Helper Functions for CNN #
+############################
 def init_weights(shape):
     init_random_dist = tf.truncated_normal(shape, stddev=0.1)
     return tf.Variable(init_random_dist)
